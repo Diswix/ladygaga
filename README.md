@@ -85,6 +85,13 @@ function openCard(){
     cartProd.classList.toggle('hide');
 }
 
+function cleanAll(){
+    cart = [];
+    localStorage.setItem("cart", '[]');
+    drawCartProducts();
+}
+
+
 html:
 
     <header>
@@ -105,3 +112,101 @@ html:
     </main>
     <script src="script1.js" defer></script>
    <link rel="stylesheet" href="style1.css">
+
+   css:
+
+   
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f2f2f2; 
+    color: #100f0f; 
+}
+
+header {
+    background-color: #dde8ff; 
+    color: #111;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #e5e7eb;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-radius: 0 0 10px 10px;
+}
+
+header h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1e40af; 
+    letter-spacing: 1px;
+}
+
+#cart {
+    position: relative;
+}
+
+#cart-button {
+    background-color: #f2f2f2; 
+    border: #143692;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+#cart-button:hover {
+    background-color: #f2f2f2; 
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+#cart-button img {
+    width: 40px;
+    height: 40px;
+}
+
+#product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.product {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.product:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 10px black;
+}
+
+.product-name {
+    color: #143692; 
+}
+
+.product-photo {
+    width: 100%;
+    max-width: 220px;      
+    height: 180px;         
+    object-fit: cover;     
+    display: block;
+    margin: 0 auto 10px;  
+    border-radius: 12px;   
+    border: 2px solid #6c7e9e; 
+    background-color: #e5e7eb;
+}
+
+
+
