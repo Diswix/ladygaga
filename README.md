@@ -50,7 +50,7 @@ function addProductToCart(id){
     })
     cart.push(product);
     drawCartProducts();
-    localStorage.setItem("cart", JSON.stringify.('cart'));
+    localStorage.setItem("cart", JSON.stringify('cart'));
 
     document.getElementById('cart-button').classList.add('active');
     setTimeout(function(){
